@@ -8,7 +8,7 @@ require('dotenv').config()
 
 const xpertRoutes = require('./api/routes/xperts')
 const instaRoutes = require('./api/routes/instaItems')
-
+const userRoutes = require('./api/routes/user')
 
 const url = 'mongodb://'+ process.env.MONGOOSE_USERNAME +':' + process.env.MONGOOSE_PASS + '@bx-shard-00-00-gciej.mongodb.net:27017,bx-shard-00-01-gciej.mongodb.net:27017,bx-shard-00-02-gciej.mongodb.net:27017/test?ssl=true&replicaSet=BX-shard-0&authSource=admin'
 
@@ -27,7 +27,7 @@ app.use(bodyParser.json())
 
 app.use('/api/xperts', xpertRoutes)
 app.use('/api/instaItems', instaRoutes)
-
+app.use('/users', userRoutes)
 
 
 // Error Handling 
